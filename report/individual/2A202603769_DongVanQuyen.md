@@ -55,6 +55,15 @@
 
 *Chọn 3 dự đoán `predict(...)` lệch nhiều nhất so với kết quả. Mỗi cái: bạn đoán gì, ra gì, vì sao lệch.*
 
+Dự đoán về Sức mạnh của các Model LLM: 
+-dự đoán gpt-6-luna  sẽ mạnh hơn khoảng 20-30% và đắt gấp 10 lần so với model lớn
+-thực tế: Model nhỏ: F1 = 0.974 Model lớn: F1 = 0.947
+-lệch vì đoán ngược về mặt chất lượng trên tập SUB, trên thực tế  mô hình nhỏ lại đạt F1 cao hơn mô hình lớn (0.974 so với 0.947). hiện tượng xảy ra khi tập sub có mẫu rất nhỏ
+
+Dự đoán về Độ sụt giảm F1 khi Stress Test
+-dự đoán: Điểm của mô hình BoW sẽ tụt mạnh xuống còn ~45%, Embedding còn ~65%, và LLM còn ~85%.
+-thực tế: . BoW + LogReg: F1 thực tế tụt thảm hại xuống 0.333 (33.3%) ,3b. Emb + LogReg: F1 thực tế tụt xuống 0.667 (66.7%), 4a. LLM nhỏ: F1 thực tế đạt tới 0.889 (88.9%)
+
 ## 4. Phân tích 50 case khó
 
 *Model nào tụt nhiều nhất, ở nhóm case nào? Nêu 2 case cụ thể và cơ chế khiến model sai.*
